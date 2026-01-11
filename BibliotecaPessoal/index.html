@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Minha Biblioteca</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+
+<h1>Biblioteca Pessoal</h1>
+
+
+<div class="box" id="loginBox">
+    <h2>Login</h2>
+    <input type="email" id="email" placeholder="E-mail">
+    <input type="password" id="senha" placeholder="Senha">
+    <button onclick="login()">Entrar</button>
+</div>
+
+<!-- APP -->
+<div class="box hidden" id="appBox">
+    <button class="logout" onclick="logout()">Logout</button>
+
+    <h2>Meus Livros</h2>
+    <div id="listaLivros"></div>
+
+    <h2>Novo Livro</h2>
+    <input type="text" id="titulo" placeholder="Título">
+    <input type="text" id="autor" placeholder="Autor">
+    <input type="number" id="ano" placeholder="Ano de publicação">
+    <textarea id="descricao" placeholder="Descrição"></textarea>
+    <button onclick="adicionarLivro()">Salvar Livro</button>
+</div>
+
+<script src="./assets/js/app.js"></script>
+</body>
+</html>

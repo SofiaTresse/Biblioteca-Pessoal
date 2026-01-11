@@ -1,0 +1,334 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f8f4f0 0%, #efe7dd 100%);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    position: relative;
+}
+
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(#a17d4d22 1px, transparent 1px),
+        radial-gradient(#5a1a1b11 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px;
+    z-index: -1;
+}
+
+
+h1 {
+    text-align: center;
+    color: #5a1a1b;
+    font-size: 2.8rem;
+    margin: 30px 0;
+    padding-bottom: 15px;
+    position: relative;
+    letter-spacing: 1px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+h1::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #a17d4d, transparent);
+}
+
+h2 {
+    margin-top: 0;
+    color: #5a1a1b;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e3d5c3;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+
+.box {
+    max-width: 500px;
+    background: #ffffff;
+    margin: 25px auto;
+    padding: 35px 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(90, 26, 27, 0.08);
+    border: 1px solid #e8ddd0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(90, 26, 27, 0.12);
+}
+
+.box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 100%;
+    background: linear-gradient(to bottom, #5a1a1b, #a17d4d);
+}
+
+
+.form-group {
+    margin-bottom: 22px;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #5a1a1b;
+    font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: 0.3px;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 14px 16px;
+    margin: 6px 0;
+    border: 1px solid #d4c9b9;
+    border-radius: 8px;
+    background-color: #fcfaf7;
+    font-size: 1rem;
+    color: #5a1a1b;
+    transition: all 0.3s ease;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: #a17d4d;
+    box-shadow: 0 0 0 3px rgba(161, 125, 77, 0.2);
+    background-color: #fff;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+    line-height: 1.5;
+}
+
+
+::placeholder {
+    color: #a99e8e;
+    opacity: 0.8;
+}
+
+
+button {
+    width: 100%;
+    padding: 16px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+button i {
+    font-size: 1.1rem;
+}
+
+
+button:not(.logout) {
+    background: linear-gradient(135deg, #5a1a1b 0%, #7a2a2b 100%);
+    color: white;
+    box-shadow: 0 4px 12px rgba(90, 26, 27, 0.25);
+}
+
+button:not(.logout):hover {
+    background: linear-gradient(135deg, #7a2a2b 0%, #5a1a1b 100%);
+    box-shadow: 0 6px 16px rgba(90, 26, 27, 0.35);
+    transform: translateY(-2px);
+}
+
+button:not(.logout):active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(90, 26, 27, 0.25);
+}
+
+
+.logout {
+    background: linear-gradient(135deg, #a17d4d 0%, #b8945e 100%);
+    color: white;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 12px rgba(161, 125, 77, 0.25);
+}
+
+.logout:hover {
+    background: linear-gradient(135deg, #b8945e 0%, #a17d4d 100%);
+    box-shadow: 0 6px 16px rgba(161, 125, 77, 0.35);
+    transform: translateY(-2px);
+}
+
+.logout:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(161, 125, 77, 0.25);
+}
+
+
+.livro {
+    border-bottom: 1px solid #e8ddd0;
+    padding: 20px 0;
+    transition: all 0.3s ease;
+}
+
+.livro:hover {
+    background-color: #fcfaf7;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: -15px;
+    margin-right: -15px;
+    border-radius: 8px;
+}
+
+.livro:last-child {
+    border-bottom: none;
+}
+
+.livro-titulo {
+    color: #5a1a1b;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.livro-autor {
+    color: #a17d4d;
+    font-style: italic;
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+.livro-descricao {
+    color: #666;
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+
+.hidden {
+    display: none;
+}
+
+
+@media (max-width: 600px) {
+    body {
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 2.2rem;
+        margin: 20px 0;
+    }
+    
+    .box {
+        padding: 25px;
+        margin: 15px auto;
+    }
+    
+    input,
+    textarea,
+    select,
+    button {
+        padding: 12px 14px;
+    }
+}
+
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.box {
+    animation: fadeIn 0.5s ease-out;
+}
+
+
+.library-icon {
+    display: block;
+    text-align: center;
+    margin: 0 auto 30px;
+    color: #a17d4d;
+    font-size: 2.5rem;
+}
+
+
+.section-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #a17d4d, transparent);
+    margin: 30px 0;
+    width: 100%;
+}
+
+
+input.valid {
+    border-color: #5a1a1b;
+    background-color: rgba(90, 26, 27, 0.03);
+}
+
+input.invalid {
+    border-color: #c45a5a;
+    background-color: rgba(196, 90, 90, 0.03);
+}
+
+
+.message {
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 500;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.message.success {
+    background-color: rgba(90, 26, 27, 0.1);
+    color: #5a1a1b;
+    border-left: 4px solid #5a1a1b;
+}
+
+.message.error {
+    background-color: rgba(196, 90, 90, 0.1);
+    color: #c45a5a;
+    border-left: 4px solid #c45a5a;
+}
